@@ -1,0 +1,22 @@
+.label {
+  font-size: 26px
+}
+
+.button {
+  font-size: 26px;
+  margin: 20px;
+}
+
+.input {
+  font-size: 26px;
+  font-family: 'Courier New'
+}
+
+.main {
+  text-align: center;
+  font-family: 'Helvetica';
+}
+
+.link {
+  display: none;
+}
