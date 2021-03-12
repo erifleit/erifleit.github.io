@@ -26,16 +26,15 @@ $(document).ready(function(){
     var word = ''
 
     num.forEach((element, index) => {
+      var n = parseInt(element)
       if(index == 1 || index == 4 || index == 7){
         shuffle(vowels)
-        num[index] = parseInt(element)
-        word += vowels[num[index]]
+        word += vowels[n]
       }
       else {
-        num[index] = parseInt(element)
         shuffle(consonants)
-        if(num[index] % 2) word += consonants[num[index]].toUpperCase()
-        else word += consonants[num[index]]
+        if(n % 2) word += consonants[n].toUpperCase()
+        else word += consonants[n]
       }
     });
     if(word.includes("nig") || word.includes("sex") || word.includes("dic")){
