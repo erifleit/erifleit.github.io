@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var textField = $("#fname")
+  var textField = $("#textField")
 
   function getNumber(a){
     var d = new Date()
@@ -47,17 +47,29 @@ $(document).ready(function(){
   function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex
     while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex)
+      randomIndex = Math.floor(Math.random() * array.length)
+      randomIndex2 = Math.floor(Math.random() * array.length)
       currentIndex -= 1
       temporaryValue = array[currentIndex]
       array[currentIndex] = array[randomIndex]
       array[randomIndex] = temporaryValue
+      array = array.reverse()
+    }
+    while (currentIndex < array.length) {
+      console.log("hello", currentIndex, array.length)
+      randomIndex = Math.floor(Math.random() * array.length)
+      randomIndex2 = Math.floor(Math.random() * array.length)
+      temporaryValue = array[currentIndex]
+      array[currentIndex] = array[randomIndex]
+      array[randomIndex] = temporaryValue
+      array = array.reverse()
+      currentIndex += 1
     }
     return array
   }
 
   function getSymbol(){
-    var symbols = ["!","@","#","$","%","^","&","*",",",".","/","?","+","=","-","_"]
+    var symbols = ["!","@","#","$","%","^","&","*",",",".","/","?","+","=","-","_", "[","]","{","}","|","<",">","(",")"]
     shuffle(symbols)
     var num = getNumber(4)
     var index = num % (symbols.length)
@@ -79,12 +91,12 @@ $(document).ready(function(){
   }
 
   var button = $('#refresh').click(function(){
-    $(".link").css("display", "contents")
+    //$(".link").css("display", "contents")
     getWord(textField)
   })
 
   var button = $('#copy').click(function(){
-    copyToClipboard("fname")
+    copyToClipboard("textField")
   })
 
   function copyToClipboard(elementId) {
