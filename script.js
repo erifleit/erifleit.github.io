@@ -47,7 +47,6 @@ $(document).ready(function(){
     var currentIndex = array.length, temporaryValue, randomIndex
     while (0 !== currentIndex) {
       randomIndex = Math.floor(Math.random() * array.length)
-      randomIndex2 = Math.floor(Math.random() * array.length)
       currentIndex -= 1
       temporaryValue = array[currentIndex]
       array[currentIndex] = array[randomIndex]
@@ -55,9 +54,7 @@ $(document).ready(function(){
       array = array.reverse()
     }
     while (currentIndex < array.length) {
-      console.log("hello", currentIndex, array.length)
       randomIndex = Math.floor(Math.random() * array.length)
-      randomIndex2 = Math.floor(Math.random() * array.length)
       temporaryValue = array[currentIndex]
       array[currentIndex] = array[randomIndex]
       array[randomIndex] = temporaryValue
