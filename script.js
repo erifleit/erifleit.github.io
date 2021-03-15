@@ -77,7 +77,7 @@ $(document).ready(function(){
   }
 
   var button = $('#refresh').click(function(){
-    //$(".link").css("display", "contents")
+    $(".link").css("display", "contents")
     getWord(textField)
   })
 
