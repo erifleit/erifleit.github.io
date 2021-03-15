@@ -20,7 +20,7 @@ $(document).ready(function(){
 
   function getShortWord(){
     const vowels = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"]
-    const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"]
+    const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z","B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Z"]
 
     var num = getNumber(9).toString().split('')
     var word = ''
@@ -33,11 +33,10 @@ $(document).ready(function(){
       }
       else {
         shuffle(consonants)
-        if(n % 2) word += consonants[n].toUpperCase()
-        else word += consonants[n]
+        word += consonants[n]
       }
     });
-    if(word.includes("nig") || word.includes("sex") || word.includes("dic")){
+    if(word.includes("nig")){
       return getShortWord()
     }
     return word
@@ -51,15 +50,6 @@ $(document).ready(function(){
       temporaryValue = array[currentIndex]
       array[currentIndex] = array[randomIndex]
       array[randomIndex] = temporaryValue
-      array = array.reverse()
-    }
-    while (currentIndex < array.length) {
-      randomIndex = Math.floor(Math.random() * array.length)
-      temporaryValue = array[currentIndex]
-      array[currentIndex] = array[randomIndex]
-      array[randomIndex] = temporaryValue
-      array = array.reverse()
-      currentIndex += 1
     }
     return array
   }
