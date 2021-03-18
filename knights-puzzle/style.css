@@ -24,3 +24,8 @@
   display: table-cell;
   vertical-align:middle;
 }
+
+.button {
+  font-size: 26px;
+  margin: 20px;
+}

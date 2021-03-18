@@ -1,25 +1,27 @@
 $(document).ready(function(){
 
   $('#refresh').click(function(){
+    $('#refresh-async').attr("onclick", "").unbind("click");
+    $('#refresh').attr("onclick", "").unbind("click");
     start(0,0)
   })
 
   var size = 8
   var steps = 0
-  var board = createArray([], size)
-
-  board.forEach( (element, index) => {
-    board[index] = createArray({visited: false, step: null}, size)
-  })
+  var board = create2DArray({visited: false, step: null}, size)
 
   function start(x, y){
-    visit(x, y, 1);
+    var d = new Date()
+    var start = d.getTime()
     if (move(x,y,1)){
-      console.log(steps)
+      var e = new Date()
+      var end = e.getTime()
+      var time = (end-start)/1000
       showBoard(board)
-      return console.log("Success")
+      console.log(`Success, in ${time} seconds. ${parseInt(steps/time)} steps per second`)
+      return true
     }
-    return "failed";
+    return false
   }
 
   function visit(x, y, step){
@@ -64,10 +66,13 @@ $(document).ready(function(){
     return false;
   }
 
-  function createArray(value, length){
+  function create2DArray(value, length){
     var array = []
-    for(var i = 0; i < length ; i++)
-      array[i] = value
+    for(var i = 0; i < length ; i++){
+      array.push([])
+      for(var j = 0; j < length ; j++)
+        array[i].push(value)
+    }
     return array
   }
 
@@ -82,7 +87,4 @@ $(document).ready(function(){
   function moveHelper(x, y, step){
     return x >= 0 && x < size && y >= 0 && y < size && !board[x][y].visited ? move(x,y,step+1) : false
   }
-
-  console.log(board)
-
 })
