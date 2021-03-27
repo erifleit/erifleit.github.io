@@ -67,8 +67,8 @@ $(document).ready(function(){
     steps = 0
     let board = new Board(w, h)
     if (move(x, y, 1, board)){
-      if(!stopped) displayMessage("success", showBoard, board)
       showBoard(board.board)
+      displayMessage("success")
     }
     else displayMessage("fail")
   }
@@ -212,7 +212,7 @@ $(document).ready(function(){
     $(".black").text("")
   }
 
-  function displayMessage(type, callback, board){
+  function displayMessage(type){
     switch (type) {
       case "timeout":
         $("#message").text("Sorry! It was taking too long so I had to give up in order to prevent your browser from crashing! 😞 \n I tried 50 million steps!").css("color", "red")
