@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-  $("#height").change(() => location.reload())
-  $("#width").change(() => location.reload())
+  $("#height").change(updateSize)
+  $("#width").change(updateSize)
 
   updateSize()
 

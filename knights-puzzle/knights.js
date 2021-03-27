@@ -11,30 +11,26 @@ $(document).ready(function(){
   })
 
   $('#solve').click(function(){
-    $('#solve').prop('disabled', true)
-    $('#solve-async').prop('disabled', true)
+    disabled(['#height', '#width', '#solve-async', '#solve', '#x', '#y'], true)
     start($('#x').val()-1, $('#y').val()-1, $('#width').val(), $('#height').val())
   })
 
   $('#solve-async').click(() => {
-    $('#solve').prop('disabled', true);
-    $('#solve-async').prop('disabled', true);
+    disabled(['#height', '#width', '#solve-async', '#solve', '#x', '#y'], true)
     startAsync($('#x').val()-1, $('#y').val()-1, $('#width').val(), $('#height').val())
   })
 
   $('#clear').click(() => {
     id++
     clearBoard()
-    $('#solve-async').prop('disabled', false)
-    $('#solve').prop('disabled', false)
+    disabled(['#solve-async', '#solve'], false)
     displayMessage("hide")
   })
 
   $('#stop').click(() => {
     isSolving = false 
     stopped = true
-    $('#solve-async').prop('disabled', true)
-    $('#solve').prop('disabled', true)
+    disabled(['#solve-async', '#solve'], true)
     displayMessage("stopped")
   })
 
@@ -236,4 +232,11 @@ $(document).ready(function(){
         break;
     }
   }
+
+  function disabled(array, boo){
+    array.forEach( element => {
+      $(element).attr("disabled", boo)
+    })
+  }
+
 })
