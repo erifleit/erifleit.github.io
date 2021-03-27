@@ -23,7 +23,7 @@ $(document).ready(function(){
   $('#clear').click(() => {
     id++
     clearBoard()
-    disabled(['#solve-async', '#solve'], false)
+    disabled(['#height', '#width', '#solve-async', '#solve', '#x', '#y'], false)
     displayMessage("hide")
   })
 
