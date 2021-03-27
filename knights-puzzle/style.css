@@ -1,7 +1,7 @@
 .chessboard {
   width: 640px;
   height: 640px;
-  margin: 20px;
+  margin: auto;
   border: 25px solid #333;
 }
 .black {
@@ -27,5 +27,28 @@
 
 .button {
   font-size: 26px;
-  margin: 20px;
+  margin: 10px
+}
+
+.table {
+  width: 640px; 
+  text-align: left;
+  margin: auto;
+  padding-top: 14px;
+}
+
+.buttons {
+  width: 640px; 
+  text-align: center;
+  margin: auto;
+}
+
+.text {
+  width: 640px;
+  margin: auto;
+  padding: 12px
+}
+
+.title {
+ text-align: center;
 }
