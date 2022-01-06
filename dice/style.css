@@ -1,0 +1,51 @@
+.label {
+  font-size: 26px
+}
+
+#button {
+  font-size: 120px;
+  width: 50%;
+  height: 30%;
+  text-align: center;
+  cursor: default;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.roll {
+  font-size: 60px;
+}
+
+#number {
+  font-size: 160px;
+  font-family: 'Courier New';
+  font-weight: 700;
+  height: 160px;
+}
+
+#n1 {
+  font-size: 80px;
+  font-family: 'Courier New';
+  font-weight: 700;
+  height: 80px;
+}
+
+.main {
+  display: flex;
+  font-family: 'Helvetica';
+  background-color: #000000;
+  color: white;
+  height: 95vh;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container {
+  flex-direction: column;
+  justify-content: center;
+}
